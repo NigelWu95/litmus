@@ -1,5 +1,5 @@
 ### RBAC Manifests
-## If SELF_CLUSTER="true" then these permissions are required to apply 
+## If SELF_CLUSTER="true" then these permissions are required to apply
 ## https://github.com/litmuschaos/litmus/blob/master/litmus-portal/graphql-server/manifests/namespace/1b_argo_rbac.yaml
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -326,7 +326,7 @@ rules:
 - apiGroups: [eventtracker.litmuschaos.io]
   resources: [eventtrackerpolicies]
   verbs: [create, delete, get, list, patch, update, watch]
-- apiGroups: [eventtracker.litmuschaos.io] 
+- apiGroups: [eventtracker.litmuschaos.io]
   resources: [eventtrackerpolicies/status]
   verbs: [get, patch, update]
 - apiGroups: ["", extensions, apps]
@@ -420,15 +420,12 @@ data:
         server_name  localhost;
         #charset koi8-r;
         #access_log  /var/log/nginx/host.access.log  main;
-
         location / {
             root   /usr/share/nginx/html;
             index  index.html index.htm;
             try_files $uri /index.html;
         }
-
         #error_page  404              /404.html;
-
         # redirect server error pages to the static page /50x.html
         #
         error_page   500 502 503 504  /50x.html;
@@ -639,7 +636,7 @@ spec:
       targetPort: 3000
     - name: auth-rpc-server
       port: 3030
-      targetPort: 3030  
+      targetPort: 3030
   selector:
     component: litmusportal-server
 ---
